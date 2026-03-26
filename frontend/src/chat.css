@@ -1,0 +1,152 @@
+:root {
+  --panel: rgba(170, 59, 255, 0.06);
+  --panel-border: rgba(170, 59, 255, 0.35);
+  --text: #6b6375;
+  --muted: #8b8595;
+  --bg: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --panel: rgba(192, 132, 252, 0.08);
+    --panel-border: rgba(192, 132, 252, 0.4);
+    --text: #9ca3af;
+    --muted: #b4b0bd;
+    --bg: #16171d;
+  }
+}
+
+.chatRoot {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .chatRoot {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  border: 1px solid var(--panel-border);
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: left;
+}
+
+.title {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--panel-border);
+  background: transparent;
+  color: inherit;
+  outline: none;
+}
+
+.btn {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--panel-border);
+  background: rgba(170, 59, 255, 0.18);
+  color: inherit;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tab {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--panel-border);
+  background: transparent;
+  cursor: pointer;
+}
+
+.tabActive {
+  background: rgba(170, 59, 255, 0.18);
+}
+
+.messages {
+  height: 60vh;
+  min-height: 340px;
+  overflow: auto;
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.msgRow {
+  display: flex;
+  margin: 8px 0;
+}
+
+.msgMe {
+  justify-content: flex-end;
+}
+
+.msgOther {
+  justify-content: flex-start;
+}
+
+.bubble {
+  max-width: 72%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--panel-border);
+  background: rgba(170, 59, 255, 0.12);
+}
+
+.bubbleMe {
+  background: rgba(192, 132, 252, 0.18);
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.inputBar {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.status {
+  color: var(--muted);
+  font-size: 13px;
+}
+
